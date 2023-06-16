@@ -17,6 +17,7 @@
                     <input v-model="url" type="text" name="price" id="price" class="block w-full rounded-md border-0 py-1.5 pl-9 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="url" />
                 </div>
             </div>
+            {{ promptResult }}
           </div>
         </div>
         <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
@@ -28,8 +29,12 @@
   
   <script setup lang="ts">
   import { ref } from 'vue'
+  import { useOpenAIStore } from "../stores/openai";
+  import { storeToRefs } from "pinia";
   
   const url = ref("")
+  const openaAIStore = useOpenAIStore()
+  const { promptResult } = storeToRefs(openaAIStore)
 
   </script>
 
