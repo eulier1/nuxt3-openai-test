@@ -1,5 +1,8 @@
 # Nuxt 3 using OpeanAI for summarizing text
 
+![summarizing text with nuxt 3 and openai API](./assets/screenshot.png)
+
+
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
