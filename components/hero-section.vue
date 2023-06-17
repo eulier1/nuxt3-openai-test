@@ -48,7 +48,7 @@
   
   <script setup lang="ts">
   import { ref } from 'vue'
-  import { useOpenAIStore } from "../store/openai"
+  import { useOpenAIStore } from "../stores/openai"
   import { storeToRefs } from "pinia";
   
   const url = ref("")
