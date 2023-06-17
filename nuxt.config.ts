@@ -4,5 +4,9 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt'
-  ]
+  ],
+  runtimeConfig: {
+    // The private keys which are only available within server-side
+    openAIKey: process.env.OPENAI_API_KEY
+  }
 })

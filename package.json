@@ -19,6 +19,7 @@
     "@headlessui/vue": "^1.7.14",
     "@heroicons/vue": "^2.0.18",
     "@pinia/nuxt": "^0.4.11",
+    "dotenv": "^16.3.0",
     "openai": "^3.3.0",
     "outline": "link:@heroicons/vue/24/outline",
     "pinia": "^2.1.4"
