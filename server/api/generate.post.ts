@@ -1,19 +1,29 @@
 import { Configuration, OpenAIApi } from 'openai'
 import { generatePrompt } from "../utils/prompts";
+import type { H3Event } from 'h3'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (event: H3Event) => {
     const { openAIKey: apiKey } = useRuntimeConfig()
 
     const { url = '', words = '', topics = '' } = await readBody(event)
 
     if (!url)
-        return event.res.end('No url provided')
+        throw createError({
+            statusCode: 400,
+            statusMessage: 'No url provided'
+        });
 
     if (!words)
-        return event.res.end('No words provided')
+        throw createError({
+            statusCode: 400,
+            statusMessage: 'No words provided'
+        });
 
     if (!topics)
-        return event.res.end('No topics provided')
+        throw createError({
+            statusCode: 400,
+            statusMessage: 'No topics provided'
+        });
 
     const configuration = new Configuration({ apiKey })
     const openai = new OpenAIApi(configuration)
