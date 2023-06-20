@@ -8,6 +8,7 @@ export const useOpenAIStore = defineStore('openai', () => {
 
     const summarizing = async ({ url, words, topics }: { url: string, words: string, topics: string }) => {
         loading.value = true
+        promptResult.value = ""
         const method = 'POST'
         const body = { url, words, topics }
         const { data, pending, error } = await useFetch('/api/generate', {
