@@ -5,6 +5,14 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## Notes :
+
+### 1. The intent of this is to see KNOW-HOW Nuxt works behind the scene.
+
+### 2. OPENAI API set a API calls quotas
+
+### 3. I'm using SSG for demo purpose
+---
 ## Setup
 
 Make sure to install the dependencies:
