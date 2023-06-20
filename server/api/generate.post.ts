@@ -47,14 +47,16 @@ export default defineEventHandler(async (event: H3Event) => {
         // Consider adjusting the error handling logic for your use case
         if (error.response) {
             console.error(error.response.status, error.response.data.error.message);
-            return {
-                result: `${error.response.status} : ${error.response.data.error.message}`
-            }
+            throw createError({
+                statusCode: parseInt(`${error.response.status}`),
+                statusMessage: `${error.response.data.error.message}`
+            });
         } else {
             console.error(`Error with OpenAI API request: ${error.message}, ${error.response.status}, ${error.response.data}`);
-            return {
-                result: `${error.response.status} : ${error.response.data.error.message}`
-            }
+            throw createError({
+                statusCode: parseInt(`${error.response.status}`),
+                statusMessage: `${error.response.data.error.message}`
+            });
         }
     }
 })

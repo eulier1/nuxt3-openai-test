@@ -8,5 +8,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // The private keys which are only available within server-side
     openAIKey: process.env.OPENAI_API_KEY
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true
+    }
   }
 })
