@@ -60,15 +60,26 @@
   const topics = ref("")
   const openaAIStore = useOpenAIStore()
   const { promptResult, loading } = storeToRefs(openaAIStore)
+  const { $openai } = useNuxtApp()
 
-  function submit(){
+  function submit() {
+    openaAIStore.summarizingCSR({
+        openai: $openai,
+        url: url.value,
+        words: words.value,
+        topics: topics.value
+    })
+  }
+
+  /* For fullstack Nuxt.js Capabilities
+  function submitSSR(){
     console.log('submit')
     openaAIStore.summarizing({
         url: url.value,
         words: words.value,
         topics: topics.value
     })
-  }
+  }*/
 
   </script>
 
